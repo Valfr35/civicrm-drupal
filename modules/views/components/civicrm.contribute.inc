@@ -566,7 +566,7 @@ function _civicrm_contribute_data(&$data, $enabled) {
     'help' => 'Bring line-items records',
     'relationship' => array(
       'base' => 'civicrm_line_item',
-      'base field' => 'entity_id',
+      'base field' => 'contribution_id',
       'field' => 'id',
       'handler' => 'views_handler_relationship',
       'label' => t('Contribution -> line-item'),
