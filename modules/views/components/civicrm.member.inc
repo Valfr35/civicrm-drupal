@@ -331,5 +331,18 @@ function _civicrm_member_data(&$data, $enabled) {
       ),
     );
   }
+  // Link to Contribution table
+  if (isset($enabled['CiviContribute'])) {
+    $data['civicrm_membership']['contribution_id'] = array(
+      'title' => t('Contribution Records'),
+      'help' => 'Bring contributions records',
+      'relationship' => array(
+        'base' => 'civicrm_contribution',
+        'base field' => 'id',
+        'handler' => 'civicrm_handler_relationship_memberships2contributions',
+        'label' => t('Membership -> Contribution'),
+      ),
+    );
+  }
 }
 
